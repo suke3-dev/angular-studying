@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GanttTestComponent } from './gantt-test.component';
 
@@ -6,7 +6,7 @@ describe('GanttTestComponent', () => {
   let component: GanttTestComponent;
   let fixture: ComponentFixture<GanttTestComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GanttTestComponent ]
     })
