@@ -21,4 +21,8 @@ export class AppComponent {
   onClick2(): void {
     this.router.navigate(['gantt-test']);
   }
+
+  onClick3(): void {
+    this.router.navigate(['report-test']);
+  }
 }

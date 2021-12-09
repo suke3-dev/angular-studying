@@ -9,13 +9,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { GanttTestComponent } from './gantt-test/gantt-test.component';
 import { RegisterSampleComponent } from './register-sample/register-sample.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReportTestComponent } from './report-test/report-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MultiRowTestComponent,
     GanttTestComponent,
-    RegisterSampleComponent
+    RegisterSampleComponent,
+    ReportTestComponent
   ],
   imports: [
     BrowserModule,

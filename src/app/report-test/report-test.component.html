@@ -1,0 +1,49 @@
+
+<div class="wrap" [ngClass]="{'wrap-smsize':isSmSizePlatform}">
+    <div class="contents" [ngStyle]="{'grid-template-columns': gridColumnsStyle,'contents-smsize':isSmSizePlatform}">
+
+        <!-- ユーザー検索欄 -->
+        <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': '1 / 2' }"
+            class="date-column grid-column-top-left-bottom week user-input">
+            <div class="search-name">
+                <!-- <input #searchName placeholder="ユーザー名" /> -->
+                <div class="icon-column">
+                    <!-- <mat-icon class="search-icon">search</mat-icon> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 日付情報を入れる行 -->
+        <ng-template ngFor let-dateItem let-i="index" [ngForOf]="dateArray">
+            <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': (i + 2) + ' / ' + (i + 3) }"
+                [ngClass]="{'week':(i !== maxColIndex), 'week-last':(i === maxColIndex - 1)}">
+                {{dateItem | date: 'M/d'}}
+            </div>
+        </ng-template>
+
+        <!-- ユーザー情報を入れる列 -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <div [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '1 / 2'}" class="grid-column name"
+                [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxRowIndex - 1)}">
+                {{item.key2}}
+            </div>
+        </ng-template>
+
+        <!-- 残りのセル -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <ng-template ngFor let-eventItem let-j="index" [ngForOf]="dateArray">
+                <div (click)="onClick($event)"
+                    [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '(j+2) / (j+3)'}"
+                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag
+                    [ngClass]="{
+                        'grid-column-top-left':(i !== maxRowIndex  && j !== maxColIndex),
+                    'grid-column-top-left-right':(i !== maxRowIndex  && j === maxColIndex - 1),
+                    'grid-column-top-left-bottom':(i === maxRowIndex - 1),
+                    'grid-column-all':(i === maxRowIndex && j === maxColIndex)}">
+                    {{kousuuCheck(item, eventItem)}}
+                    
+                </div>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>
