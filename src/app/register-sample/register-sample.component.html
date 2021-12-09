@@ -1,0 +1,31 @@
+<div class="contents">
+    <form [formGroup]="formGroup">
+        <span class="edit-title">{{editTitle}}</span>
+        <div class="explain-text">伝票番号：{{keyNo}}</div>
+        <div>
+            <mat-form-field class="input-field">
+                <mat-label>key</mat-label>
+                <input matInput #customerName formControlName="key" maxlength = "128"> 
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="input-field">
+                <mat-label>開始日付</mat-label>
+                <input matInput #customerName formControlName="startDate" maxlength = "128"> 
+            </mat-form-field>
+            ～
+            <mat-form-field class="input-field">
+                <mat-label>終了日付</mat-label>
+                <input matInput #customerName formControlName="endDate" maxlength = "128"> 
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" type="button" (click)="submit()">
+                <b>登録</b>
+            </button>
+            <button mat-raised-button type="button" (click)="cancel()">
+                <b>閉じる</b>
+            </button>
+        </div>
+    </form>
+</div>

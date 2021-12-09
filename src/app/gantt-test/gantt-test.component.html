@@ -1,0 +1,54 @@
+
+<div class="wrap" [ngClass]="{'wrap-smsize':isSmSizePlatform}">
+    <div class="contents" [ngStyle]="{'grid-template-columns': gridColumnsStyle,'contents-smsize':isSmSizePlatform}">
+
+        <!-- ユーザー検索欄 -->
+        <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': '1 / 2' }"
+            class="date-column grid-column-top-left-bottom week user-input">
+            <div class="search-name">
+                <input #searchName placeholder="ユーザー名" />
+                <div class="icon-column">
+                    <mat-icon class="search-icon">search</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日付情報を入れる行 -->
+        <ng-template ngFor let-dateItem let-i="index" [ngForOf]="dateArray">
+            <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': (i + 2) + ' / ' + (i + 3) }"
+                class="date-column grid-column  week"
+                [ngClass]="{'saturday': (dateItem.key2.getDay() === 6), 'sunday': (dateItem.key2.getDay() === 0), 'grid-header-column': true, 'grid-header-last-column': (i === maxColIndex - 1)}">
+                {{dateItem.key2 | date: 'dd'}}
+            </div>
+        </ng-template>
+
+        <!-- ユーザー情報を入れる列 -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <div [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '1 / 2'}" class="grid-column name"
+                [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxColIndex)}">
+                {{item.key2}}
+            </div>
+        </ng-template>
+
+        <!-- 残りのセル -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <ng-template ngFor let-eventItem let-j="index" [ngForOf]="dateArray">
+                <div id="{{'test' + i + '-' + j}}" (keyup)="onKey($event)" (click)="onClick($event)" (mousedown)="onMouseDown($event, item.key1, eventItem.key1)" (mouseup)="onMouseUp($event, item.key1, eventItem.key1)"
+                (mouseenter)="onMouseEnter($event, item.key1, eventItem.key1)"  (mouseleave)="onMouseLeave(item.key1, eventItem.key1)"
+                (touchstart)="onTouchStart($event, item.key1, eventItem.key1)" (touchend)="onTouchEnd($event, item.key1, eventItem.key1)"
+                (touchmove)="onTouchMove($event, item.key1, eventItem.key1)"
+                    [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '(j+2) / (j+3)'}"
+                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag
+                    [ngClass]="{
+                        'grid-column-top-left':(i !== maxRowIndex  && j !== maxColIndex),
+                    'grid-column-top-left-right':(i !== maxRowIndex  && j === maxColIndex - 1),
+                    'grid-column-top-left-bottom':(i === maxRowIndex),
+                    'grid-column-all':(i === maxRowIndex && j === maxColIndex),
+                    'grid-select': (colorFlg && mouseDownRow === item.key1 && eventItem.flg === true),
+                    'todayBackgraund':(eventItem.key2 === today)}">
+                    
+                </div>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>
