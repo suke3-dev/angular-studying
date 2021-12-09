@@ -1,0 +1,292 @@
+<div class="main" *ngIf="platform.BLINK">
+    <table mat-table [dataSource]="transactions" class="mat-elevation-z8" multiTemplateDataRows="true">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> お客様注文番号 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.position}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null12">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null13">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null14">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null15">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null16">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null17">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null18">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null19">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null110">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> タイプ </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.type}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="takanotype">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> タカノタイプ </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.takanotype}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 製品名称 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="null24">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="suryo">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 数量 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.suryo}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="syukka">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 出荷ｻｰﾋﾞｽ </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.syukka}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="hopedate">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 希望出荷日 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.hopedate}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="syukkadate">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 出荷予定日 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.syukkadate}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tanka">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 単価 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.tanka}} </td>
+      </ng-container>
+      <ng-container matColumnDef="null210">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="takanokikaku">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> タカノタイプ/規格 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.takanokikaku}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null32">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+      <ng-container matColumnDef="null33">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="limited">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 当日締切時刻 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.limited}} </td>
+      </ng-container>
+      <ng-container matColumnDef="null35">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null36">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="goaldate">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 着日指定 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.goaldate}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null38">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null39">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null310">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="note">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 備考 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.note}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null42">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="siirename">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 仕入先名 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.siirename}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null44">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tehai">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 手配 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.tehai}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="hacchutani">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 発注単位 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.hacchutani}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="maker">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> メーカー直送 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.maker}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nyuukadate">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 入荷予定日 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.nyuukadate}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="hacchutanka">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"> 発注単価 </th>
+        <td mat-cell *matCellDef="let element" class="row-noline"> {{element.hacchutanka}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null410">
+        <th mat-header-cell *matHeaderCellDef class="row-noline"></th>
+        <td mat-cell *matCellDef="let element" class="row-noline"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="hacchuno">
+        <th mat-header-cell *matHeaderCellDef> 発注品番 </th>
+        <td mat-cell *matCellDef="let element"> {{element.hacchuno}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null52">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="null53">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null54">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null55">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null56">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null57">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null58">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null59">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="null510">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"></td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true" class="row"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true" class="row"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns3; sticky: true" class="row"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns4; sticky: true" class="row"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns5; sticky: true" class="row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns1;" class="row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;" class="row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns3;" class="row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns4;" class="row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns5;" class="row"></tr>
+  
+      <!-- <tr mat-header-row *matHeaderRowDef="['position', 'name']"></tr>
+    <tr mat-header-row *matHeaderRowDef="['weight', 'symbol']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['position', 'name'];"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['weight', 'symbol']"></tr> -->
+  
+  
+      <!-- <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef colspan="3"> Name </th>
+          <td mat-cell *matCellDef="let element"  colspan="3"> {{element.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tt">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container> -->
+  
+  
+    </table>
+  </div>
