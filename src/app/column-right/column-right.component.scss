@@ -1,0 +1,35 @@
+.mat-table {
+    width: 100%;
+    
+    .mat-cell {
+    //   span {       
+    //     display: block; 
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //   }
+    text-align: center;
+    }
+    .mat-header-cell {
+      position: relative; 
+      text-align: center;    
+    //   &:not(:last-child) {
+    //     .resize-holder {
+    //       cursor: col-resize;
+    //       width: 20px;
+    //       height: 100%;
+    //       position: absolute;
+    //       right: -10px;
+    //       top: 0;
+    //       z-index: 1;
+    //     }
+    //   }
+    }
+    .mat-cell,
+    .mat-header-cell {
+        width: 300px;
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+      &:not(:nth-child(1)) {
+        padding: 0 10px;
+      }
+    }
+}

@@ -25,4 +25,12 @@ export class AppComponent {
   onClick3(): void {
     this.router.navigate(['report-test']);
   }
+
+  onClick4(): void {
+    this.router.navigate(['resize-column-test']);
+  }
+
+  onClick5(): void {
+    this.router.navigate(['column-right-test']);
+  }
 }

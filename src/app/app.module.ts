@@ -10,6 +10,9 @@ import { GanttTestComponent } from './gantt-test/gantt-test.component';
 import { RegisterSampleComponent } from './register-sample/register-sample.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReportTestComponent } from './report-test/report-test.component';
+import { ResizeColumnComponent } from './resize-column/resize-column.component';
+import { ResizeColumnDirective } from './resize-column/resize-column.directive';
+import { ColumnRightComponent } from './column-right/column-right.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ReportTestComponent } from './report-test/report-test.component';
     MultiRowTestComponent,
     GanttTestComponent,
     RegisterSampleComponent,
-    ReportTestComponent
+    ReportTestComponent,
+    ResizeColumnComponent,
+    ResizeColumnDirective,
+    ColumnRightComponent
   ],
   imports: [
     BrowserModule,
