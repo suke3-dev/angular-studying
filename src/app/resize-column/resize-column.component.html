@@ -1,17 +1,90 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <ng-container *ngFor="let column of displayedColumns; let i = index" [matColumnDef]="column">
-      <th mat-header-cell *matHeaderCellDef [resizeColumn]="true"
-          [index]="i"> <span>{{column}} </span></th>
-      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+
+<div class="test">
+  <table mat-table [dataSource]="dataSource" matSort class="user-list mat-elevation-z8">
+    <!-- 商品CD Column -->
+    <ng-container matColumnDef="productCd">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="productCd"
+        [resizeColumn]="true" [index]="0"> 商品CD </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.productCd}} </td>
     </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
-  
-  
-  <!-- Copyright 2019 Google LLC. All Rights Reserved.
+
+    <!-- 図番・品番 Column -->
+    <ng-container matColumnDef="figureNumber">
+        <th mat-header-cell *matHeaderCellDef
+        [resizeColumn]="true" [index]="1"> 図番・品番 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.figureNumber}} </td>
+    </ng-container>
+
+    <!-- 品名 Column -->
+    <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="productName"
+        [resizeColumn]="true" [index]="2"> 品名 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.productName}} </td>
+    </ng-container>
+
+    <!-- 表面処理 Column -->
+    <ng-container matColumnDef="surfaceProcess">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="surfaceProcess"
+        [resizeColumn]="true" [index]="3"> 表面処理 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.surfaceProcess}} </td>
+    </ng-container>
+
+    <!-- 後処理 Column -->
+    <ng-container matColumnDef="postProcess">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="postProcess"
+        [resizeColumn]="true" [index]="4"> 後処理 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.postProcess}} </td>
+    </ng-container>
+
+    <!-- 材質 Column -->
+    <ng-container matColumnDef="material">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="material"
+        [resizeColumn]="true" [index]="5"> 材質 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.material}} </td>
+    </ng-container>
+
+    <!-- JANCD Column -->
+    <ng-container matColumnDef="jancd">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="jancd"
+        [resizeColumn]="true" [index]="6"> JANCD </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.jancd}} </td>
+    </ng-container>
+
+    <!-- 新規登録日 Column -->
+    <ng-container matColumnDef="registerDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="registerDate"
+        [resizeColumn]="true" [index]="7"> 新規登録日 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            {{element.registerDate | date:"yyyy/MM/dd"}} </td>
+    </ng-container>
+
+    <!-- 廃番 Column -->
+    <ng-container matColumnDef="waste">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="waste"
+        [resizeColumn]="true" [index]="8"> 廃番 </th>
+        <td mat-cell *matCellDef="let element;let i = index">
+            <ng-container *ngIf="element.waste===1">廃</ng-container>
+        </td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: row.hovered}"
+        (mouseover)="row.hovered = true" (mouseout)="row.hovered = false">
+    </tr>
+</table>
+</div>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
       Use of this source code is governed by an MIT-style license that
       can be found in the LICENSE file at http://angular.io/license -->
