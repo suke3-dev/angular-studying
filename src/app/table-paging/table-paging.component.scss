@@ -1,0 +1,15 @@
+table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.table-container {
+    width: calc(100vw - 60px);
+    max-height: calc(100vh - 430px);
+    min-height: calc(100vh - 430px);
+    height: auto;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-collapse: collapse;
+    
+  }

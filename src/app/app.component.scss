@@ -261,6 +261,12 @@
     width: 1920px;
   }
 
+  .menu {
+    button {
+      display: inline-block;
+    }
+    text-align: center;
+  }
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {

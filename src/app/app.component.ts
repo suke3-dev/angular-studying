@@ -14,23 +14,27 @@ export class AppComponent {
 
   title = 'angular-studying';
 
-  onClick(): void {
+  onClickMultiRowTest(): void {
     this.router.navigate(['multi-row-test']);
   }
 
-  onClick2(): void {
+  onClickGanttTest(): void {
     this.router.navigate(['gantt-test']);
   }
 
-  onClick3(): void {
+  onClickReportTest(): void {
     this.router.navigate(['report-test']);
   }
 
-  onClick4(): void {
+  onClickResizeColumn(): void {
     this.router.navigate(['resize-column-test']);
   }
 
-  onClick5(): void {
+  onClickColumnRight(): void {
     this.router.navigate(['column-right-test']);
+  }
+
+  onClickTablePaging(): void {
+    this.router.navigate(['table-paging']);
   }
 }

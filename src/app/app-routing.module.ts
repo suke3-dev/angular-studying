@@ -5,6 +5,7 @@ import { GanttTestComponent } from './gantt-test/gantt-test.component';
 import { ReportTestComponent } from './report-test/report-test.component';
 import { ResizeColumnComponent } from './resize-column/resize-column.component';
 import { ColumnRightComponent } from './column-right/column-right.component';
+import { TablePagingComponent } from './table-paging/table-paging.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'report-test', component: ReportTestComponent },
   { path: 'resize-column-test', component: ResizeColumnComponent },
   { path: 'column-right-test', component: ColumnRightComponent },
+  { path: 'table-paging', component: TablePagingComponent },
 ];
 
 @NgModule({

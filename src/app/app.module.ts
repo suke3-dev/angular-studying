@@ -13,6 +13,7 @@ import { ReportTestComponent } from './report-test/report-test.component';
 import { ResizeColumnComponent } from './resize-column/resize-column.component';
 import { ResizeColumnDirective } from './resize-column/resize-column.directive';
 import { ColumnRightComponent } from './column-right/column-right.component';
+import { TablePagingComponent } from './table-paging/table-paging.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ColumnRightComponent } from './column-right/column-right.component';
     ReportTestComponent,
     ResizeColumnComponent,
     ResizeColumnDirective,
-    ColumnRightComponent
+    ColumnRightComponent,
+    TablePagingComponent
   ],
   imports: [
     BrowserModule,
