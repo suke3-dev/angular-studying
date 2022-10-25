@@ -14,6 +14,8 @@ import { ResizeColumnComponent } from './resize-column/resize-column.component';
 import { ResizeColumnDirective } from './resize-column/resize-column.directive';
 import { ColumnRightComponent } from './column-right/column-right.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
+import { GridLayoutComponent } from './grid-layout/grid-layout.component';
+import { ByteLimitComponent } from './byte-limit/byte-limit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TablePagingComponent } from './table-paging/table-paging.component';
     ResizeColumnComponent,
     ResizeColumnDirective,
     ColumnRightComponent,
-    TablePagingComponent
+    TablePagingComponent,
+    GridLayoutComponent,
+    ByteLimitComponent
   ],
   imports: [
     BrowserModule,

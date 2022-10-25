@@ -1,0 +1,10 @@
+<form [formGroup]="editForm">
+    
+<input id="test" maxlength="100" (input)="inputLimitByteTitle($event)" formControlName="title">
+<input id="testaaaa" maxlength="10" (keyup)="inputLimitByteTitle($event)" formControlName="memo">
+<button id="test2" (click)="check()">ちぇっく
+</button>   
+    <br>
+    <p>getElementById: {{inputStr}}</p>
+    <br>
+    <p>editForm: {{inputStr2}}</p></form> 

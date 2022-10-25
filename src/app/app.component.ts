@@ -37,4 +37,13 @@ export class AppComponent {
   onClickTablePaging(): void {
     this.router.navigate(['table-paging']);
   }
+
+  onClickGridLayout(): void {
+    this.router.navigate(['grid-layout']);
+  }
+
+  
+  onClickByteLimit(): void {
+    this.router.navigate(['byte-limit']);
+  }
 }

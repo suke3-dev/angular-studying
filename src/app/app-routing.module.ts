@@ -6,6 +6,8 @@ import { ReportTestComponent } from './report-test/report-test.component';
 import { ResizeColumnComponent } from './resize-column/resize-column.component';
 import { ColumnRightComponent } from './column-right/column-right.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
+import { GridLayoutComponent } from './grid-layout/grid-layout.component';
+import { ByteLimitComponent } from './byte-limit/byte-limit.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'resize-column-test', component: ResizeColumnComponent },
   { path: 'column-right-test', component: ColumnRightComponent },
   { path: 'table-paging', component: TablePagingComponent },
+  { path: 'grid-layout', component: GridLayoutComponent },
+  { path: 'byte-limit', component: ByteLimitComponent },
 ];
 
 @NgModule({
