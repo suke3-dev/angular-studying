@@ -1,0 +1,13 @@
+<p>file-rename works!</p>
+
+<div>
+    <input type="file" #fileInput (change)="onChangeFileInput()">
+</div>
+<div>
+    <span>保存したいファイル名</span>
+    <input type="text" [(ngModel)]="fileRename">
+</div>
+
+<div>
+    <button (click)="fileDownload()">保存</button>
+</div>

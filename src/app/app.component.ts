@@ -46,4 +46,8 @@ export class AppComponent {
   onClickByteLimit(): void {
     this.router.navigate(['byte-limit']);
   }
+
+  onClickFileRename(): void {
+    this.router.navigate(['file-rename']);
+  }
 }

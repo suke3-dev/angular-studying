@@ -8,6 +8,7 @@ import { ColumnRightComponent } from './column-right/column-right.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { ByteLimitComponent } from './byte-limit/byte-limit.component';
+import { FileRenameComponent } from './file-rename/file-rename.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'table-paging', component: TablePagingComponent },
   { path: 'grid-layout', component: GridLayoutComponent },
   { path: 'byte-limit', component: ByteLimitComponent },
+  { path: 'file-rename', component: FileRenameComponent },
 ];
 
 @NgModule({

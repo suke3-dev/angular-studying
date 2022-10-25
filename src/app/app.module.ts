@@ -16,6 +16,7 @@ import { ColumnRightComponent } from './column-right/column-right.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { ByteLimitComponent } from './byte-limit/byte-limit.component';
+import { FileRenameComponent } from './file-rename/file-rename.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ByteLimitComponent } from './byte-limit/byte-limit.component';
     ColumnRightComponent,
     TablePagingComponent,
     GridLayoutComponent,
-    ByteLimitComponent
+    ByteLimitComponent,
+    FileRenameComponent
   ],
   imports: [
     BrowserModule,
