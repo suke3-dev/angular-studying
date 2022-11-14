@@ -1,0 +1,71 @@
+<div class="wrap" [ngClass]="{'wrap-smsize':isSmSizePlatform}">
+    <div class="contents" [ngStyle]="{'contents-smsize':isSmSizePlatform}">
+
+        <!-- ユーザー検索欄 -->
+        <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': '1 / 2' }"
+            class="date-column grid-column-top-left-bottom week user-input">
+            <div class="search-name">
+                <input #searchName placeholder="ユーザー名" />
+                <div class="icon-column">
+                    <mat-icon class="search-icon">search</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日付情報を入れる行 -->
+        <ng-template ngFor let-dateItem let-i="index" [ngForOf]="dateArray">
+            <div [ngStyle]="{'grid-row': '1 / 2', 'grid-column': (i + 2) + ' / ' + (i + 3) }"
+                class="date-column grid-column  week"
+                [ngClass]="{'saturday': (dateItem.hiduke.getDay() === 6), 'sunday': (dateItem.hiduke.getDay() === 0), 'grid-header-column': true, 'grid-header-last-column': (i === maxColIndex - 1)}">
+                {{dateItem.hiduke | date: 'dd'}}
+            </div>
+        </ng-template>
+
+        <!-- ユーザー情報を入れる列 -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <div [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '1 / 2'}" class="grid-column name"
+                [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxColIndex)}">
+                {{item.userName}}
+            </div>
+        </ng-template>
+
+        <!-- 残りのセル -->
+        <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
+            <ng-template ngFor let-dateItem let-j="index" [ngForOf]="dateArray">
+                <div id="{{'test' + i + '-' + j}}" 
+                    (mousedown)="onMouseDown($event, item.userId, dateItem.date)"
+                    (mouseup)="onMouseUp($event, item.userId, dateItem.date)"
+                    (touchstart)="onTouchStart($event, item.userId, dateItem.date)"
+                    (touchend)="onTouchEnd($event, item.userId, dateItem.date)"
+                    [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': (j+2) + '/' + (j+3)}"
+                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag [ngClass]="{
+                        'grid-column-top-left':(i !== maxRowIndex  && j !== maxColIndex),
+                    'grid-column-top-left-right':(i !== maxRowIndex  && j === maxColIndex - 1),
+                    'grid-column-top-left-bottom':(i === maxRowIndex),
+                    'grid-column-all':(i === maxRowIndex && j === maxColIndex),
+                    'grid-select': (colorFlg && startRow === item.userId && dateItem.flg === true),
+                    'todayBackgraund':(dateItem.hiduke === today)}">
+
+                </div>
+
+            </ng-template>
+        </ng-template>
+
+        <!-- 残りのセル -->
+                <ng-template ngFor let-eventItem let-j="index" [ngForOf]="rentalList">
+                    <div id="{{'test2' + eventItem.userId + '-' + eventItem.start}}"  (click)="onClick(eventItem.startDate, eventItem.endDate, eventItem.start)"
+                    (click)="onMouseDown($event, eventItem.userId, eventItem.userId)"
+                    [ngStyle]="{'grid-row': (eventItem.userId+1) + ' / ' + (eventItem.userId+2), 'grid-column': (eventItem.start+2) + '/' + (eventItem.end+2)}"
+                    style="color: white; background-color: rgb(253, 150, 82); overflow:hidden;"
+                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag [ngClass]="{
+                        'grid-column-top-left':(j !== maxRowIndex  && j !== maxColIndex),
+                    'grid-column-top-left-right':(j !== maxRowIndex  && j === maxColIndex - 1),
+                    'grid-column-top-left-bottom':(j === maxRowIndex),
+                    'grid-column-all':(j === maxRowIndex && j === maxColIndex),
+                    'grid-select': (colorFlg && startRow === eventItem.userId && eventItem.flg === true)}">{{eventItem.key4}}aaaaaaaaaaaaaaaa
+
+                </div>
+
+            </ng-template>
+    </div>
+</div>

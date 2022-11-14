@@ -17,6 +17,10 @@ import { TablePagingComponent } from './table-paging/table-paging.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { ByteLimitComponent } from './byte-limit/byte-limit.component';
 import { FileRenameComponent } from './file-rename/file-rename.component';
+import { GanttTest2Component } from './gantt-test2/gantt-test2.component';
+import { GanttTest3Component } from './gantt-test3/gantt-test3.component';
+import { GanttTest4Component } from './gantt-test4/gantt-test4.component';
+import { AngularGanttScheduleTimelineCalendarModule } from 'angular-gantt-schedule-timeline-calendar';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { FileRenameComponent } from './file-rename/file-rename.component';
     TablePagingComponent,
     GridLayoutComponent,
     ByteLimitComponent,
-    FileRenameComponent
+    FileRenameComponent,
+    GanttTest2Component,
+    GanttTest3Component,
+    GanttTest4Component,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,8 @@ import { FileRenameComponent } from './file-rename/file-rename.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularGanttScheduleTimelineCalendarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

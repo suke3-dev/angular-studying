@@ -1,4 +1,3 @@
-
 <div class="wrap" [ngClass]="{'wrap-smsize':isSmSizePlatform}">
     <div class="contents" [ngStyle]="{'grid-template-columns': gridColumnsStyle,'contents-smsize':isSmSizePlatform}">
 
@@ -28,25 +27,36 @@
                 [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxColIndex)}">
                 {{item.key2}}
             </div>
+            <div [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '1 / 2'}" class="grid-column name"
+                [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxColIndex)}">
+                test2
+            </div>
+            <div [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '1 / 2'}" class="grid-column name"
+                [ngClass]="{'grid-column-top-left':(i !== maxRowIndex),'grid-column-top-left-bottom':(i === maxColIndex)}">
+                test3
+            </div>
         </ng-template>
 
         <!-- 残りのセル -->
         <ng-template ngFor let-item let-i="index" [ngForOf]="userList">
             <ng-template ngFor let-eventItem let-j="index" [ngForOf]="dateArray">
-                <div id="{{'test' + i + '-' + j}}" (keyup)="onKey($event)" (click)="onClick($event)" (mousedown)="onMouseDown($event, item.key1, eventItem.key1)" (mouseup)="onMouseUp($event, item.key1, eventItem.key1)"
-                (mouseenter)="onMouseEnter($event, item.key1, eventItem.key1)"  (mouseleave)="onMouseLeave(item.key1, eventItem.key1)"
-                (touchstart)="onTouchStart($event, item.key1, eventItem.key1)" (touchend)="onTouchEnd($event, item.key1, eventItem.key1)"
-                (touchmove)="onTouchMove($event, item.key1, eventItem.key1)"
-                    [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': '(j+2) / (j+3)'}"
-                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag
-                    [ngClass]="{
+                <div id="{{'test' + i + '-' + j}}" (keyup)="onKey($event)" (click)="onClick($event)"
+                    (mousedown)="onMouseDown($event, item.key1, eventItem.key1)"
+                    (mouseup)="onMouseUp($event, item.key1, eventItem.key1)"
+                    (mouseenter)="onMouseEnter($event, item.key1, eventItem.key1)"
+                    (mouseleave)="onMouseLeave(item.key1, eventItem.key1)"
+                    (touchstart)="onTouchStart($event, item.key1, eventItem.key1)"
+                    (touchend)="onTouchEnd($event, item.key1, eventItem.key1)"
+                    (touchmove)="onTouchMove($event, item.key1, eventItem.key1)"
+                    [ngStyle]="{'grid-row': (i+2) + ' / ' + (i+3), 'grid-column': (j+2) + '/' + (j+3)}"
+                    class="grid-column person-event" cdkDragLockAxis="x" cdkDrag [ngClass]="{
                         'grid-column-top-left':(i !== maxRowIndex  && j !== maxColIndex),
                     'grid-column-top-left-right':(i !== maxRowIndex  && j === maxColIndex - 1),
                     'grid-column-top-left-bottom':(i === maxRowIndex),
                     'grid-column-all':(i === maxRowIndex && j === maxColIndex),
                     'grid-select': (colorFlg && mouseDownRow === item.key1 && eventItem.flg === true),
                     'todayBackgraund':(eventItem.key2 === today)}">
-                    
+
                 </div>
             </ng-template>
         </ng-template>

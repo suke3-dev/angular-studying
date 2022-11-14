@@ -22,6 +22,18 @@ export class AppComponent {
     this.router.navigate(['gantt-test']);
   }
 
+  onClickGanttTest2(): void {
+    this.router.navigate(['gantt-test2']);
+  }
+
+  onClickGanttTest3(): void {
+    this.router.navigate(['gantt-test3']);
+  }
+
+  onClickGanttTest4(): void {
+    this.router.navigate(['gantt-test4']);
+  }
+
   onClickReportTest(): void {
     this.router.navigate(['report-test']);
   }
